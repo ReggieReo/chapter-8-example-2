@@ -26,7 +26,7 @@ app.get("/live", (req, res) => {
 // Registers a HTTP GET route for video streaming.
 //
 app.get("/video", async (req, res) => { // Route for streaming video.
-    
+
     const videoPath = "./videos/SampleVideo_1280x720_1mb.mp4";
     const stats = await fs.promises.stat(videoPath);
 
@@ -42,7 +42,7 @@ if (require.main === module) {
     // When this script is run as the entry point, starts the HTTP server.
     //
     app.listen(PORT, () => {
-        console.log(`Microservice online.`);
+        console.log(`Microservice online. On Port ${process.env.PORT}`);
     });
 }
 else {
